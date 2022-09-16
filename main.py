@@ -20,8 +20,6 @@ class Weapon04:
 weaponsArray = [Weapon01().damage, Weapon02().damage, Weapon03().damage, Weapon04().damage]
 
 #Armor
-armorsArray = ["Armor01", "Armor02", "Armor03", "Armor03"]
-
 class Armor01: 
     protection = 5
 
@@ -34,9 +32,10 @@ class Armor03:
 class Armor04: 
     protection = 20
 
-#lifePackages
-lifePackagesArray = ["lifePackages01", "lifePackages02", "lifePackages03", "lifePackages04"]
+armorsArray = [Armor01().protection, Armor02().protection, Armor03().protection, Armor04().protection]
 
+
+#lifePackages
 class lifePackages01: 
     life = 20
 
@@ -48,6 +47,9 @@ class lifePackages03:
 
 class lifePackages04: 
     life = 35
+
+lifePackagesArray = [lifePackages01().life, lifePackages02().life, lifePackages03().life, lifePackages04().life]
+
 
 #LootBoxes
 lootBoxes = ["lootBox01", "lootBox02", "lootBox02"]
@@ -112,3 +114,43 @@ def getWeaponLoot03():
     print(userProfileGenerated.damage)
 
 
+#ARMOUR RANDOM LOOTBOX FUNCTIONS
+
+def getArmorLoot01():
+    randomNumberArmor = random.randint(1,100)
+
+    if randomNumberArmor <= 90:
+        UserProfileTemplate.damage = [armorsArray[0]]
+    else:
+        UserProfileTemplate.damage = [armorsArray[1]]
+
+    print(userProfileGenerated.damage)
+
+def getArmorLoot02():
+    randomNumberArmor = random.randint(1,100)
+
+    if randomNumberArmor in range(1,50):
+        UserProfileTemplate.damage = [armorsArray[0]]
+    elif randomNumberArmor in range(50,95):
+        UserProfileTemplate.damage = [armorsArray[1]]
+    elif randomNumberArmor in range(95,100):
+        UserProfileTemplate.damage = [armorsArray[2]]
+    print(userProfileGenerated.damage)
+
+
+def getArmorLoot03():
+    randomNumberArmor = random.randint(1,100)
+
+    if randomNumberArmor in range(1,15):
+        UserProfileTemplate.damage = [armorsArray[0]]
+    elif randomNumberArmor in range(15,70):
+        UserProfileTemplate.damage = [armorsArray[1]]
+    elif randomNumberArmor in range(70,95):
+        UserProfileTemplate.damage = [armorsArray[2]]
+    elif randomNumberArmor in range(95,100):
+        UserProfileTemplate.damage = [armorsArray[3]]
+    print(userProfileGenerated.damage)
+
+
+
+getArmorLoot03()
